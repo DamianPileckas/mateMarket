@@ -5,7 +5,7 @@ const CartWidget = () => {
 
   return (
     <>
-      <div className="cart-widget d-flex align-items-center">
+      <div className="cart-widget ">
         <FaShoppingCart size={24} />
         <span className="badge bg-primary">{itemCount}</span>
       </div>
