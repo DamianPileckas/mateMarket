@@ -16,25 +16,21 @@ const ItemCount = () => {
 
   return (
     <div className="counter-container">
-      <div className="input-group">
-        <div className="input-group-prepend">
-          <span className="input-group-text counter-symbol" onClick={decrement} disabled={count === 0}>
-            -
-          </span>
-        </div>
-        <input
-          type="number"
-          className="form-control text-center ml-2"
-          value={count}
-          readOnly
-        />
-        <div className="input-group-append">
-          <span className="input-group-text counter-symbol" onClick={increment}>
-           +
-          </span>
+      <div className='row justify-content-center'>
+        <div className='col-4'>  
+          <div className="input-group">
+              <span className="input-group-text counter-symbol" onClick={decrement} disabled={count === 0}>-</span>
+              <input
+                type="number"
+                className="form-control text-center"
+                value={count}
+                readOnly
+              />
+              <span className="input-group-text counter-symbol" onClick={increment}>+</span>
+          </div>
         </div>
       </div>
-      <button className="btn btn-primary ml-2" onClick={increment}>
+      <button className="btn btn-primary" onClick={increment}>
         Agregar al carrito
       </button>
     </div>
