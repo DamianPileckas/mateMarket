@@ -16,7 +16,8 @@ const ItemCount = ({stock}) => {
     }
   };
 
-  const onAdd = () => { 
+  const onAdd = () => {
+    console.log(itemStock) 
     if(count <= itemStock){
       setItemStock(itemStock - count);
       setCount(1)
@@ -27,24 +28,21 @@ const ItemCount = ({stock}) => {
   }
 
   return (
-    <div className="counter-container">
-      <div className='row justify-content-center'>
-        <div className='col-4'>  
-          <div className="btn-group">
+    <div className="counter-container d-flex justify-content-center">
+      <div className='row w-75'>
+        <div className='col'>  
+          <div className="btn-group p-1">
               <button type="button" className="btn btn-primary rounded-start-pill" onClick={decrement}>-</button>
-              <input
-                type="number"
-                className="btn btn-primary"
-                value={count}
-                readOnly 
-              />
+              <input type="number" className="btn btn-primary w-25" value={count} readOnly />
               <button type="button" className="btn btn-primary rounded-end-pill" onClick={increment}>+</button>
           </div>
+          <button className="btn btn-primary" onClick={onAdd}>
+            Agregar al carrito
+          </button>
         </div>
+        
       </div>
-      <button className="btn btn-primary" onClick={onAdd}>
-        Agregar al carrito
-      </button>
+      
     </div>
   );
 };
