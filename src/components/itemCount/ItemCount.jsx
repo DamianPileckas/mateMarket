@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ItemCount = ({stock}) => {
   const [count, setCount] = useState(0);
   const [itemStock, setItemStock] = useState(stock);
-
+  console.log("TEST 1 =>"+itemStock)
   const increment = () => {
     if(count < itemStock){
       setCount(count + 1);
     }
   };
-
+  console.log("TEST 2 =>"+itemStock)
   const decrement = () => {
     if (count > 0) {
       setCount(count - 1);
     }
   };
-
+  console.log("TEST 3 =>"+itemStock)
   const onAdd = () => {
     console.log(itemStock) 
     if(count <= itemStock){
@@ -27,6 +27,11 @@ const ItemCount = ({stock}) => {
     }
   }
 
+  useEffect(() => {
+    setItemStock(stock)
+  }, [stock])
+
+  console.log("TEST 4 =>"+itemStock)
   return (
     <div className="counter-container d-flex justify-content-center">
       <div className='row w-75'>

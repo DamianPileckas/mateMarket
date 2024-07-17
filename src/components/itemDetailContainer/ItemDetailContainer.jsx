@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const promesa = new Promise(resolve => {
       setTimeout(() => {
-          resolve(arrayProductos.find(item => item.id == id))
+          resolve(arrayProductos.find(item => item.id === id))
       }, 2000)
     })
 

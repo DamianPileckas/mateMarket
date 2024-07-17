@@ -1,7 +1,7 @@
 import ItemCount from "../itemCount/ItemCount";
 
 const ItemDetail = ({item}) => {
-    console.log(item)
+    console.log(JSON.stringify(item) + "ItemDetail")
     return (
             <div className="container ">
                 <div className="row p-3 bg-light bg-gradient">
