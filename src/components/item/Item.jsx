@@ -1,13 +1,17 @@
+import { Link } from "react-router-dom";
+
 const Item = ({item}) => {
     
   return (
     
-    <div className="col-md-3">
-      <div className="card border-0 fixed-card">
-        <img src={item.pictureUrl} className="card-img-top p-3 fixed-image" alt={item.title}/>
-        <div className="card-body p-2">
-          <p className="card-text p-3">{item.title}</p>
-          <p className="card-text p-3">${item.price}</p>
+    <div className="col-md-4 mb-3">
+      <div className="card border-0">
+        <Link to={"/item/"+ item.id}>
+          <img src={item.pictureUrl} className="card-img-top" alt={item.title}/>
+        </Link>
+        <div className="card-body">
+          <p className="card-text"><b>{item.title}</b></p>
+          <p className="card-text"><b>${item.price}</b></p>
         </div>
       </div>
     </div>
