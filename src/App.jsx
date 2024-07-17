@@ -11,6 +11,7 @@ function App() {
       <Navbar/>
       <ItemListContainer/>
       <ItemDetailContainer/>
+      <ItemCount stock={10} />
     </>
   )
 }

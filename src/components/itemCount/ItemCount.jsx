@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
   const [count, setCount] = useState(0);
+  const [itemStock, setItemStock] = useState(stock);
 
   const increment = () => {
-    setCount(count + 1);
+    if(count < itemStock){
+      setCount(count + 1);
+    }
   };
 
   const decrement = () => {
@@ -13,24 +16,33 @@ const ItemCount = () => {
     }
   };
 
+  const onAdd = () => { 
+    if(count <= itemStock){
+      setItemStock(itemStock - count);
+      setCount(1)
+    }
+    if(itemStock > 1){
+      setCount(0)
+    }
+  }
 
   return (
     <div className="counter-container">
       <div className='row justify-content-center'>
         <div className='col-4'>  
-          <div className="input-group">
-              <span className="input-group-text counter-symbol" onClick={decrement} disabled={count === 0}>-</span>
+          <div className="btn-group">
+              <button type="button" className="btn btn-primary rounded-start-pill" onClick={decrement}>-</button>
               <input
                 type="number"
-                className="form-control text-center"
+                className="btn btn-primary"
                 value={count}
-                readOnly
+                readOnly 
               />
-              <span className="input-group-text counter-symbol" onClick={increment}>+</span>
+              <button type="button" className="btn btn-primary rounded-end-pill" onClick={increment}>+</button>
           </div>
         </div>
       </div>
-      <button className="btn btn-primary" onClick={increment}>
+      <button className="btn btn-primary" onClick={onAdd}>
         Agregar al carrito
       </button>
     </div>
