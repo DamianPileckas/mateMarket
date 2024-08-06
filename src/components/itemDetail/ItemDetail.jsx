@@ -8,7 +8,6 @@ const ItemDetail = ({item}) => {
     const {addItem} = useContext(CartContext);
 
     const onAdd = (quantity) => {
-        console.log("Cantidad", quantity)
         addItem(item, quantity);
     }
    

@@ -3,41 +3,49 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+    const [carrito, setCarrito] = useState([]);
 
     const addItem = (item, quantity) => {
         if(isInCart(item.id)){
-            console.log("Esta el producto!");
-            const product = cart.find(prod => prod.id = item.id);
-            producto.quantity != quantity
-            console.log("Cantidad", product.quantity);
-            setCart([...cart]);
+            console.log("Esta el producto! ");
+            const product = carrito.find(prod => prod.id == item.id);
+            product.quantity += quantity
+            
+            console.log("Cantidad "+quantity);
+            setCarrito([...carrito, product]);
+            
         }else{
-            setCart([...cart, { quantity:quantity}])
+            setCarrito([...carrito, { ...item, quantity:quantity}])
+            carrito.forEach(item => {console.log(item.id + " " + item.title)});
+            showList();
         }
     }
 
     const removeItem = (id) => {
-        const items = cart.filter(item => item.id != id);
-        setCart([...items]);
+        const items = carrito.filter(item => item.id != id);
+        setCarrito([...items]);
     }
 
     const clear = () => {
-        setCart([]);
+        setCarrito([]);
     }
 
     const isInCart = (id) => {
-        return cart.some(item => item.id == id);
+        return carrito.some(item => item.id == id);
     }
 
     const totalProducts = (id) => {
-        return cart.reduce((acum, item) => acum += item.quantity, 0);
+        return carrito.reduce((acum, item) => acum += item.quantity, 0);
     }
 
     const sumProducts = (id) => {
-        return cart.reduce((acum, item) => acum += item.quantity * item.price, 0);
+        return carrito.reduce((acum, item) => acum += item.quantity * item.price, 0);
     }
-    return <CartContext.Provider value={{cart, addItem, removeItem, clear, totalProducts, sumProducts}}>
+
+    const showList = () => {
+        return carrito.forEach( item => {console.log("TEST SHOWLIST => ID "+item.id+", title "+item.title)})
+    }
+    return <CartContext.Provider value={{carrito, addItem, removeItem, clear, totalProducts, sumProducts, showList}}>
         {children}
     </CartContext.Provider>
 }

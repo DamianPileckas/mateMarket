@@ -8,16 +8,14 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const promesa = new Promise(resolve => {
       setTimeout(() => {
-          resolve(arrayProductos.find(item => item.id === id))
+          resolve(arrayProductos.find(item => item.id == id))
       }, 2000)
     })
 
     promesa.then(response => {
-      console.log(JSON.stringify(response) + "ItemDETAILcontainer") 
       setItem(response)
       
     })
-    console.log(JSON.stringify(item) + "ItemDETAILcontainer 2")
   }, [id])
 
   return (

@@ -14,13 +14,13 @@ const ItemCount = ({stock, agregar}) => {
       setCount(count - 1);
     }
   };
-  const onAdd = () => {
-    console.log(itemStock) 
+  const addToCart = () => {
     if(count <= itemStock){
       setItemStock(itemStock - count);
       agregar(count)
       setCount(1)
       setVisible(false);
+      console.log("Agregaste " + count + " productos al carrito!")
     }
     if(itemStock > 1){
       setCount(0)
@@ -43,7 +43,7 @@ const ItemCount = ({stock, agregar}) => {
                 <input type="number" className="btn btn-primary w-25" value={count} readOnly />
                 <button type="button" className="btn btn-primary rounded-end-pill" onClick={increment}>+</button>
             </div>
-            <button className="btn btn-primary" onClick={onAdd}>
+            <button className="btn btn-primary" onClick={addToCart}>
               Agregar al carrito
             </button>
           </div>
