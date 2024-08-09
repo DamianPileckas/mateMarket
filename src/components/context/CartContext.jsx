@@ -17,7 +17,6 @@ const CartContextProvider = ({ children }) => {
         }else{
             setCarrito([...carrito, { ...item, quantity:quantity}])
             carrito.forEach(item => {console.log(item.id + " " + item.title)});
-            showList();
         }
     }
 
@@ -42,10 +41,7 @@ const CartContextProvider = ({ children }) => {
         return carrito.reduce((acum, item) => acum += item.quantity * item.price, 0);
     }
 
-    const showList = () => {
-        return carrito.forEach( item => {console.log("TEST SHOWLIST => ID "+item.id+", title "+item.title)})
-    }
-    return <CartContext.Provider value={{carrito, addItem, removeItem, clear, totalProducts, sumProducts, showList}}>
+    return <CartContext.Provider value={{carrito, addItem, removeItem, clear, totalProducts, sumProducts}}>
         {children}
     </CartContext.Provider>
 }

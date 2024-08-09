@@ -12,8 +12,8 @@ const ItemDetail = ({item}) => {
     }
    
     return (
-            <div className="container ">
-                <div className="row p-3 bg-light bg-gradient">
+            <div className="container my-5">
+                <div className="row p-3 bg-light bg-gradient rounded">
                     <div className="col d-flex justify-content-start offset-md-1">
                         <img className="w-75 p-3" src={item.pictureUrl} alt={item.title} />
                     </div>

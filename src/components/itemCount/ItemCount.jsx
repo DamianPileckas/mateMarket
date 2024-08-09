@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 const ItemCount = ({stock, agregar}) => {
   const [count, setCount] = useState(0);
   const [itemStock, setItemStock] = useState(stock);
-  const [ visible, setVisible ] = useState(true);
+  const [visible, setVisible] = useState(true);
+ 
   const increment = () => {
     if(count < itemStock){
       setCount(count + 1);
@@ -18,12 +19,9 @@ const ItemCount = ({stock, agregar}) => {
     if(count <= itemStock){
       setItemStock(itemStock - count);
       agregar(count)
-      setCount(1)
+      setCount(count)
       setVisible(false);
       console.log("Agregaste " + count + " productos al carrito!")
-    }
-    if(itemStock > 1){
-      setCount(0)
     }
   }
 

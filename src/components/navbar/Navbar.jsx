@@ -7,17 +7,17 @@ import { Link, NavLink } from "react-router-dom";
 function Navbar() {
         
   return (
-    <div className="container">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
-        <div class="container-fluid">
+    <div >
+      <nav className="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Eleventh navbar example">
+        <div className="container-fluid">
           <Link to={"/"} className="navbar-brand">
-                    <GiCapybara className="me-2 capybara-icon" />MateMarket
+            <GiCapybara className="me-2 capybara-icon" />MateMarket
           </Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExample09">
+          <div className="collapse navbar-collapse" id="navbarsExample09">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink to={"/"} className="nav-link text-black" aria-current="page" >Home</NavLink>

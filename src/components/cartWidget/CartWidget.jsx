@@ -10,7 +10,7 @@ const CartWidget = () => {
   if(totalProducts() > 0){
     return (
       <Link to={"/cart"}>
-        <div className="cart-widget ">
+        <div className="cart-widget rounded">
           <FaShoppingCart size={24} />
           <span className="badge bg-primary">{totalProducts()}</span>
         </div>
