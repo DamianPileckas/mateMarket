@@ -34,7 +34,7 @@ useEffect(() => {
 }, [id])
   return (
       <>
-        <div className="container">
+        <div className="container my-5 rounded">
           <div className="row p-2">
             <ItemList items={items} />
           </div> 

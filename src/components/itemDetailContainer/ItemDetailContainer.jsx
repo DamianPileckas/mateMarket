@@ -1,5 +1,4 @@
 import ItemDetail from "../itemDetail/ItemDetail"
-import arrayProductos from "../../assets/json/data.json"
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
