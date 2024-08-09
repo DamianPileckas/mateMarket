@@ -40,6 +40,9 @@ function Navbar() {
                 <a className="nav-link text-black" >Contactanos</a>
               </li>
             </ul>
+            <ul className="navbar-nav d-flex align-items-center mb-2 mb-lg-0 list-unstyled">
+              <li className="nav-item"><CartWidget /></li>
+            </ul>
           </div>
         </div>
       </nav>
